@@ -13,7 +13,7 @@ public class UIHealthBar : MonoBehaviour
     void Awake()
     {
         instance = this;
-        SetValue(0);
+        // SetValue(0);
     }
 
     void Start()
@@ -23,7 +23,6 @@ public class UIHealthBar : MonoBehaviour
 
     public void SetValue(float value)
     {
-        print(">>>>>>>>>>>>" + value);
         mask.rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, originalSize * value);
     }
 }
