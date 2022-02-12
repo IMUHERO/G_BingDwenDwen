@@ -36,16 +36,17 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets/My Assets/Script/IceLandGenerator.cs" />
-     <Compile Include="Assets/My Assets/Script/PlayerController.cs" />
-     <Compile Include="Assets/My Assets/Script/ObstacleGenerator.cs" />
-     <Compile Include="Assets/My Assets/Script/Obstacle/BigController.cs" />
      <Compile Include="Assets/My Assets/Script/Obstacle/SmallController.cs" />
-     <Compile Include="Assets/My Assets/Script/Obstacle/LanternController.cs" />
-     <Compile Include="Assets/My Assets/Script/Obstacle/LandController.cs" />
-     <Compile Include="Assets/My Assets/Script/Obstacle/ObstacleController.cs" />
      <Compile Include="Assets/My Assets/Script/Globals.cs" />
+     <Compile Include="Assets/My Assets/Script/ObstacleGenerator.cs" />
+     <Compile Include="Assets/My Assets/Script/PlayerController.cs" />
+     <Compile Include="Assets/My Assets/Script/Obstacle/ObstacleController.cs" />
+     <Compile Include="Assets/My Assets/Script/IceLandGenerator.cs" />
      <Compile Include="Assets/My Assets/Script/Obstacle/IceBornController.cs" />
+     <Compile Include="Assets/My Assets/Script/Obstacle/LanternController.cs" />
+     <Compile Include="Assets/My Assets/Script/Obstacle/BigController.cs" />
+     <Compile Include="Assets/My Assets/Script/Obstacle/LandController.cs" />
+     <Compile Include="Assets/My Assets/Script/UIHealthBar.cs" />
      <None Include="Assets/2DBeginner/2DBeginner_Third-PartyNotice.txt" />
     <Reference Include="UnityEngine">
         <HintPath>/Users/imuhero/Applications/2020.3.27f1c1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.dll</HintPath>
@@ -686,6 +687,12 @@
     <Reference Include="Unity.2D.IK.Runtime">
         <HintPath>/Users/imuhero/program/unity/冰墩墩/Library/ScriptAssemblies/Unity.2D.IK.Runtime.dll</HintPath>
     </Reference>
+    <Reference Include="Cinemachine">
+        <HintPath>/Users/imuhero/program/unity/冰墩墩/Library/ScriptAssemblies/Cinemachine.dll</HintPath>
+    </Reference>
+    <Reference Include="com.unity.cinemachine.editor">
+        <HintPath>/Users/imuhero/program/unity/冰墩墩/Library/ScriptAssemblies/com.unity.cinemachine.editor.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.2D.Animation.Triangle.Runtime">
         <HintPath>/Users/imuhero/program/unity/冰墩墩/Library/ScriptAssemblies/Unity.2D.Animation.Triangle.Runtime.dll</HintPath>
     </Reference>
@@ -712,12 +719,6 @@
     </Reference>
     <Reference Include="Unity.2D.SpriteShape.Runtime">
         <HintPath>/Users/imuhero/program/unity/冰墩墩/Library/ScriptAssemblies/Unity.2D.SpriteShape.Runtime.dll</HintPath>
-    </Reference>
-    <Reference Include="com.unity.cinemachine.editor">
-        <HintPath>/Users/imuhero/program/unity/冰墩墩/Library/ScriptAssemblies/com.unity.cinemachine.editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Cinemachine">
-        <HintPath>/Users/imuhero/program/unity/冰墩墩/Library/ScriptAssemblies/Cinemachine.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

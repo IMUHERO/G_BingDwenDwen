@@ -9,7 +9,9 @@ public class Globals: MonoBehaviour
     public static float rotateRate = 1;
     public static float speedRate = 1;
     // 主要参数
-    public const float LAND_MOVE_SPEED = 3;
+    public const float LAND_MOVE_SPEED = 3.0f;
+    public const float MaxCollectNum = 5.0f;   // 积攒5个释放大招
+
 
     // 雪崩
     public const float ICE_BORN_MOVE_SPEED = 1;
