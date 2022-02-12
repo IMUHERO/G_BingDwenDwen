@@ -1,0 +1,4 @@
+repository "冰墩墩@ssl://imuhero@sh03-plasticscm.unity.cn:8787"
+  path "/"
+    br "/main"
+    co "/main"
