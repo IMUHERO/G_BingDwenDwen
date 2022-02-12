@@ -8,6 +8,7 @@ public class Globals: MonoBehaviour
     public static int collectNum = 0;
     public static float rotateRate = 1;
     public static float speedRate = 1;
+    public static float totalDistance = 0;
     // 主要参数
     public const float LAND_MOVE_SPEED = 3.0f;
     public const float MaxCollectNum = 5.0f;   // 积攒5个释放大招

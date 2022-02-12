@@ -21,16 +21,15 @@ public class IceLandGenerator : MonoBehaviour
         if(PlayerController.playerStage != "moving"){
             return;
         }
-        float distance = Globals.LAND_MOVE_SPEED * Time.deltaTime;
+        float distance = Globals.LAND_MOVE_SPEED * Time.deltaTime * Globals.speedRate;
         totalDistance += distance;
+        Globals.totalDistance += distance;
         if(totalDistance > LAND_HIGH){
             // Debug.Log("........" + totalDistance);
             totalDistance -= LAND_HIGH;
             GameObject curLand = lands[curIndex];
             Vector3 position = curLand.transform.position;
-            // Debug.Log("before" + position.y);
             position.y = position.y - LAND_HIGH * (lands.Count);
-            // Debug.Log("after" + position.y);
             curLand.transform.position = position;
             curIndex = (curIndex + 1) % lands.Count;
         }
