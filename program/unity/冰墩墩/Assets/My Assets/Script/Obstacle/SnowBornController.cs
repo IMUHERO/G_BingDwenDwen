@@ -68,7 +68,7 @@ public class SnowBornController : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
             // PlayerController controller = other.GetComponent<PlayerController>();
-            PlayerController.playerStage = "over";
+            PlayerController.instance.GameOver();
             print("播放玩家摔倒动画");
             print("GAME OVER" + PlayerController.playerStage);
             iceBornMoveDis = 15;

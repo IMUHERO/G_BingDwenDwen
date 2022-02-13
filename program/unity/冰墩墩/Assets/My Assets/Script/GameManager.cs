@@ -11,18 +11,31 @@ public class GameManager : MonoBehaviour
     public static Dictionary<string, List<GameObject>> gameObjects;
 
     private void Awake() {
+        instance = this;
         gameObjects = new Dictionary<string, List<GameObject>>();
     }
 
     void Start()
     {
-        instance = this;
         GameRestart();
     }
 
     // Update is called once per frame
     void Update()
     {
+
+    }
+
+    public float GetObstacleSpeed(){
+        return getSpeed();
+    }
+
+    public float GetLandSpeed(){
+        return getSpeed();
+    }
+
+    public float getSpeed(){
+        return Globals.LAND_MOVE_SPEED * Globals.speedRate * Globals.distanceSpeedRate;
 
     }
 

@@ -47,21 +47,21 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
+     <Compile Include="Assets\My Assets\Script\Ui\UIRightBtn.cs" />
      <Compile Include="Assets\My Assets\Script\Obstacle\SmallController.cs" />
      <Compile Include="Assets\My Assets\Script\Globals.cs" />
      <Compile Include="Assets\My Assets\Script\ObstacleGenerator.cs" />
      <Compile Include="Assets\My Assets\Script\PlayerController.cs" />
      <Compile Include="Assets\My Assets\Script\Obstacle\ObstacleController.cs" />
+     <Compile Include="Assets\My Assets\Script\GameManager.cs" />
      <Compile Include="Assets\My Assets\Script\IceLandGenerator.cs" />
      <Compile Include="Assets\My Assets\Script\Obstacle\SnowBornController.cs" />
      <Compile Include="Assets\My Assets\Script\Ui\UIController.cs" />
      <Compile Include="Assets\My Assets\Script\Obstacle\LanternController.cs" />
      <Compile Include="Assets\My Assets\Script\Obstacle\BigController.cs" />
+     <Compile Include="Assets\My Assets\Script\Ui\UILeftBtn.cs" />
      <Compile Include="Assets\My Assets\Script\Obstacle\LandController.cs" />
      <Compile Include="Assets\My Assets\Script\Ui\UIHealthBar.cs" />
-     <Compile Include="Assets\My Assets\Script\Ui\UILeftBtn.cs" />
-     <Compile Include="Assets\My Assets\Script\Ui\UIRightBtn.cs" />
-     <Compile Include="Assets\My Assets\Script\GameManager.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\2DBeginner\2DBeginner_Third-PartyNotice.txt" />

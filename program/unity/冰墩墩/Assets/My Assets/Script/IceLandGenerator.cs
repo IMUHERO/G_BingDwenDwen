@@ -9,20 +9,27 @@ public class IceLandGenerator : MonoBehaviour
     public List<GameObject> lands;
     private float totalDistance;
     private int curIndex;
+    private List<int> addSpeedRates;
+    private List<int> addGenerateRates;
+    private void Awake() {
+        instance = this;
+    }
     // Start is called before the first frame update
     void Start()
     {
-        instance = this;
-        Restart();
+        // Restart();
     }
 
     public void Restart()
     {
+
+        addSpeedRates = new List<int>();
+        addGenerateRates = new List<int>();
         for (int i = 0; i < lands.Count; i++)
         {
             GameObject land = lands[i];
             Vector2 position = land.transform.position;
-            position.y = - i * Globals.LAND_HIGH;
+            position.y = -i * Globals.LAND_HIGH;
             land.transform.position = position;
         }
         curIndex = 0;
@@ -31,12 +38,13 @@ public class IceLandGenerator : MonoBehaviour
 
     private void MoveLand()
     {
-        if (PlayerController.playerStage != "moving")
+        if (PlayerController.playerStage != Globals.PLAYER_STAGE_MOVING)
         {
             return;
         }
-        float distance = Globals.LAND_MOVE_SPEED * Time.deltaTime * Globals.speedRate;
+        float distance = GameManager.instance.GetLandSpeed() * Time.deltaTime;
         totalDistance += distance;
+        CheckAddRate();
         Globals.totalDistance += distance;
         if (totalDistance > Globals.LAND_HIGH)
         {
@@ -57,19 +65,41 @@ public class IceLandGenerator : MonoBehaviour
         }
     }
 
+    private void CheckAddRate()
+    {
+        if(PlayerController.playerStage != Globals.PLAYER_STAGE_MOVING){
+            return;
+        }
+        int addSpeedTimes = (int)(Globals.totalDistance / Globals.DIS_ADD_SPEED);
+        int addGenTimes = (int)(Globals.totalDistance / Globals.DIS_ADD_GEN);
+        // print(">>>>>>>>>>>>>>>>" + addSpeedTimes + ' ' + addGenTimes);
+        if (addSpeedTimes > 0 && !addSpeedRates.Contains(addSpeedTimes))
+        {
+            addSpeedRates.Add(addSpeedTimes);
+            Globals.distanceSpeedRate += Globals.DIS_ADD_SPEED_RATE;
+            UIController.instance.showTipText(Globals.TIP_SPEED);
+        }
+        if (addGenTimes > 0 && !addGenerateRates.Contains(addGenTimes))
+        {
+            addGenerateRates.Add(addGenTimes);
+            Globals.distanceGenerateRate *= Globals.DIS_ADD_GEN_RATE;
+            UIController.instance.showTipText(Globals.TIP_GENERATE);
+        }
+    }
+
     // Update is called once per frame
     void Update()
     {
-        if (PlayerController.playerStage == "Begin")
-        {
+        // if (PlayerController.playerStage == Globals.PLAYER_STAGE_BEGIN)
+        // {
 
-            for (int i = 0; i < lands.Count; i++)
-            {
-                Vector2 pos = lands[i].transform.position;
-                pos.y -= i * Globals.LAND_HIGH;
-                lands[i].transform.position = pos;
-            }
-        }
+        //     for (int i = 0; i < lands.Count; i++)
+        //     {
+        //         Vector2 pos = lands[i].transform.position;
+        //         pos.y -= i * Globals.LAND_HIGH;
+        //         lands[i].transform.position = pos;
+        //     }
+        // }
     }
     void FixedUpdate()
     {

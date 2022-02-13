@@ -12,10 +12,14 @@ public class PlayerController : MonoBehaviour
     private float MAX_MOVE = 3.0f;
     private float curMove = 0.0f;
     private float horizontal;
+    private Animator animator;
+    private void Awake() {
+        animator = GetComponent<Animator>();
+        instance = this;
+    }
     void Start()
     {
-        playerStage = "begin";
-        instance = this;
+        // Restart();
     }
 
     // Update is called once per frame
@@ -35,26 +39,29 @@ public class PlayerController : MonoBehaviour
     {
         transform.position = Vector3.zero;
         curMove = 0;
-        playerStage = "begin";
+        playerStage = Globals.PLAYER_STAGE_BEGIN;
+        animator.SetTrigger(Globals.PLAYER_ANI_BEGIN);
     }
 
     private void Rotating()
     {
-        if (playerStage != "moving")
+        if (playerStage != Globals.PLAYER_STAGE_MOVING)
         {
             return;
         }
         Vector2 position = transform.position;
-        float dis = horizontal * Globals.rotateRate * Time.deltaTime;
+        float trueHori = horizontal;
         if (Mathf.Abs(horizontal) < 0.0001f)
         {
-            // print("......." + horizontal);
-            dis = Globals.horizontal * Globals.rotateRate * Time.deltaTime;
+            trueHori = Globals.horizontal;
         }
         else
         {
             Globals.horizontal = 0;
         }
+        float dis = trueHori * Globals.rotateRate * Time.deltaTime;
+        // print("........" + trueHori);
+        PlayerController.instance.animator.SetFloat(Globals.PLAYER_MOVE_HORI, trueHori);
         position.x += dis;
         transform.position = position;
     }
@@ -68,7 +75,8 @@ public class PlayerController : MonoBehaviour
         if (curMove > MAX_MOVE)
         {
             curMove = -1.0f;
-            playerStage = "moving";
+            playerStage = Globals.PLAYER_STAGE_MOVING;
+            animator.SetTrigger(Globals.PLAYER_MOVE_TRIGGER);
             return;
         }
         // Debug.Log("in..." + curMove + ' ' + MAX_MOVE);
@@ -77,5 +85,10 @@ public class PlayerController : MonoBehaviour
         position.y -= distance;
         transform.position = position;
         curMove += distance;
+    }
+
+    public void GameOver(){
+        PlayerController.playerStage = Globals.PLAYER_STAGE_OVER;
+        animator.SetTrigger(Globals.PLAYER_ANI_OVER);
     }
 }

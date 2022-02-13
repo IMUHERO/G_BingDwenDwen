@@ -22,16 +22,19 @@ public class ObstacleGenerator : MonoBehaviour
     private float lanterncd = 0.0f;
     public const int LANTERN_CD = 3;
 
+    private void Awake()
+    {
+        instance = this;
+    }
     // Start is called before the first frame update
     void Start()
     {
-        instance = this;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (PlayerController.playerStage != "moving")
+        if (PlayerController.playerStage != Globals.PLAYER_STAGE_MOVING)
         {
             return;
         }
@@ -58,27 +61,32 @@ public class ObstacleGenerator : MonoBehaviour
         return newOb;
     }
 
+    private float GetObstacleCD(float fixCd)
+    {
+        return fixCd * Globals.distanceGenerateRate;
+    }
+
     private void genSmall()
     {
         smallcd += Time.deltaTime;
-        if (smallcd < SMALL_CD)
+        if (smallcd < GetObstacleCD(SMALL_CD))
         {
             return;
         }
         smallcd = 0;
-        int index = Random.Range(0, smalls.Count - 1);
+        int index = Random.Range(0, smalls.Count);
         GameObject ob = genObject(Globals.SMALL_NAME, smalls[index]);
     }
 
     private void genBig()
     {
         bigcd += Time.deltaTime;
-        if (bigcd < BIG_CD)
+        if (bigcd < GetObstacleCD(BIG_CD))
         {
             return;
         }
         bigcd = 0;
-        int index = Random.Range(0, bigs.Count - 1);
+        int index = Random.Range(0, bigs.Count);
         GameObject ob = genObject(Globals.BIG_NAME, bigs[index]);
     }
 
@@ -86,7 +94,7 @@ public class ObstacleGenerator : MonoBehaviour
     private void genlantern()
     {
         lanterncd += Time.deltaTime;
-        if (lanterncd < LANTERN_CD)
+        if (lanterncd < GetObstacleCD(LANTERN_CD))
         {
             return;
         }
@@ -98,12 +106,12 @@ public class ObstacleGenerator : MonoBehaviour
     private void genLand()
     {
         landcd += Time.deltaTime;
-        if (landcd < LAND_CD)
+        if (landcd < GetObstacleCD(LAND_CD))
         {
             return;
         }
         landcd = 0;
-        int index = Random.Range(0, lands.Count - 1);
+        int index = Random.Range(0, lands.Count);
         GameObject ob = genObject(Globals.LAND_NAME, lands[index]);
     }
 }

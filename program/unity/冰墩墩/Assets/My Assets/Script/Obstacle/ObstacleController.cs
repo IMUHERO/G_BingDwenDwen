@@ -7,7 +7,7 @@ public class ObstacleController : MonoBehaviour
     private float moveDis = 0;
     public void Moving()
     {
-        if (PlayerController.playerStage != "moving")
+        if (PlayerController.playerStage != Globals.PLAYER_STAGE_MOVING)
         {
             return;
         }
@@ -16,7 +16,7 @@ public class ObstacleController : MonoBehaviour
             GameObject.Destroy(gameObject, 0);
         }
         Vector2 position = transform.position;
-        float dis = Globals.LAND_MOVE_SPEED * Globals.speedRate  * Time.deltaTime;
+        float dis = GameManager.instance.GetObstacleSpeed() * Time.deltaTime;
         moveDis += dis;
         position.y += dis;
         transform.position = position;

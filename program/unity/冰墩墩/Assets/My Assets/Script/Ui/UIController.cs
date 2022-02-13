@@ -8,7 +8,9 @@ public class UIController : MonoBehaviour
     // Start is called before the first frame update
     public static UIController instance { get; private set; }
     public Text scoreUI;
-    public Text tipUI;
+    public Text tipSpeedUI;
+    public Text tipGenUI;
+    public Text resultText;
     public GameObject resultUI;
     // private float onSecondCd = 0;
     private string scoreSuffix = "Distance";
@@ -18,12 +20,13 @@ public class UIController : MonoBehaviour
     }
     void Start()
     {
-        Restart();
+        // Restart();
     }
 
     public void Restart()
     {
-        tipUI.gameObject.SetActive(false);
+        tipSpeedUI.gameObject.SetActive(false);
+        tipGenUI.gameObject.SetActive(false);
         resultUI.SetActive(false);
         UIHealthBar.instance.Restart();
         setScoreText(0);
@@ -31,13 +34,25 @@ public class UIController : MonoBehaviour
 
     public void showTipText(string tip)
     {
-        tipUI.gameObject.SetActive(true);
-        tipUI.text = tip;
-        Invoke("waitDestoryTip", Globals.TIP_SHOW_TIME);
+        print("show tips ....." + tip);
+        if(tip == Globals.TIP_SPEED){
+            tipSpeedUI.gameObject.SetActive(true);
+            tipSpeedUI.text = tip;
+            Invoke("waitDestorySpeedTip", Globals.TIP_SHOW_TIME);
+        }
+        if(tip == Globals.TIP_GENERATE){
+            tipGenUI.gameObject.SetActive(true);
+            tipGenUI.text = tip;
+            Invoke("waitDestoryGenTip", Globals.TIP_SHOW_TIME);
+        }
     }
-    void waitDestoryTip()
+    void waitDestorySpeedTip()
     {
-        tipUI.gameObject.SetActive(false);
+        tipSpeedUI.gameObject.SetActive(false);
+    }
+    void waitDestoryGenTip()
+    {
+        tipGenUI.gameObject.SetActive(false);
     }
 
     private void setScoreText(float M)
@@ -54,9 +69,10 @@ public class UIController : MonoBehaviour
         //     onSecondCd -= 0.5f;
         //     doOneSecond();
         // }
-        if (PlayerController.playerStage == "over")
+        if (PlayerController.playerStage == Globals.PLAYER_STAGE_OVER)
         {
             resultUI.SetActive(true);
+            resultText.text = scoreUI.text;
         }
 
     }

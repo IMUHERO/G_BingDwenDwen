@@ -28,7 +28,7 @@ public class LanternController : ObstacleController
             }
             Globals.collectNum += 1;
             UIHealthBar.instance.SetValue(Globals.collectNum / (float)Globals.MaxCollectNum);
-            print("collect num: " + Globals.collectNum);
+            print("collect num: " + Globals.collectNum + " " + Globals.collectNum / (float)Globals.MaxCollectNum);
         }
     }
 }
