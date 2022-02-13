@@ -5,9 +5,9 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     // Start is called before the first frame update
+    public static PlayerController instance { get; private set; }
     public static string playerStage;
     public float moveSpeed;
-    public float horiSpeed;
     public GameObject winterCar;
     private float MAX_MOVE = 3.0f;
     private float curMove = 0.0f;
@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         playerStage = "begin";
+        instance = this;
     }
 
     // Update is called once per frame
@@ -30,20 +31,42 @@ public class PlayerController : MonoBehaviour
         Rotating();
     }
 
-    private void Rotating(){
-        if(playerStage != "moving"){
+    public void Restart()
+    {
+        transform.position = Vector3.zero;
+        curMove = 0;
+        playerStage = "begin";
+    }
+
+    private void Rotating()
+    {
+        if (playerStage != "moving")
+        {
             return;
         }
         Vector2 position = transform.position;
-        position.x += horiSpeed * horizontal * Globals.rotateRate * Time.deltaTime;
+        float dis = horizontal * Globals.rotateRate * Time.deltaTime;
+        if (Mathf.Abs(horizontal) < 0.0001f)
+        {
+            // print("......." + horizontal);
+            dis = Globals.horizontal * Globals.rotateRate * Time.deltaTime;
+        }
+        else
+        {
+            Globals.horizontal = 0;
+        }
+        position.x += dis;
         transform.position = position;
     }
 
-    private void BeginMoving(){
-        if(curMove == -1.0f){
+    private void BeginMoving()
+    {
+        if (curMove == -1.0f)
+        {
             return;
         }
-        if(curMove > MAX_MOVE){
+        if (curMove > MAX_MOVE)
+        {
             curMove = -1.0f;
             playerStage = "moving";
             return;

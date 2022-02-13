@@ -5,31 +5,46 @@ using UnityEngine;
 public class IceLandGenerator : MonoBehaviour
 {
     // public GameObject iceLandPrefabe;
+    public static IceLandGenerator instance { get; private set; }
     public List<GameObject> lands;
     private float totalDistance;
     private int curIndex;
-    public static int LAND_HIGH = 15;
-    public static int LAND_WIDTH = 16;
     // Start is called before the first frame update
     void Start()
     {
+        instance = this;
+        Restart();
+    }
+
+    public void Restart()
+    {
+        for (int i = 0; i < lands.Count; i++)
+        {
+            GameObject land = lands[i];
+            Vector2 position = land.transform.position;
+            position.y = - i * Globals.LAND_HIGH;
+            land.transform.position = position;
+        }
         curIndex = 0;
+        totalDistance = 0;
     }
 
     private void MoveLand()
     {
-        if(PlayerController.playerStage != "moving"){
+        if (PlayerController.playerStage != "moving")
+        {
             return;
         }
         float distance = Globals.LAND_MOVE_SPEED * Time.deltaTime * Globals.speedRate;
         totalDistance += distance;
         Globals.totalDistance += distance;
-        if(totalDistance > LAND_HIGH){
+        if (totalDistance > Globals.LAND_HIGH)
+        {
             // Debug.Log("........" + totalDistance);
-            totalDistance -= LAND_HIGH;
+            totalDistance -= Globals.LAND_HIGH;
             GameObject curLand = lands[curIndex];
             Vector3 position = curLand.transform.position;
-            position.y = position.y - LAND_HIGH * (lands.Count);
+            position.y = position.y - Globals.LAND_HIGH * (lands.Count);
             curLand.transform.position = position;
             curIndex = (curIndex + 1) % lands.Count;
         }
@@ -45,11 +60,19 @@ public class IceLandGenerator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-    }
+        if (PlayerController.playerStage == "Begin")
+        {
 
+            for (int i = 0; i < lands.Count; i++)
+            {
+                Vector2 pos = lands[i].transform.position;
+                pos.y -= i * Globals.LAND_HIGH;
+                lands[i].transform.position = pos;
+            }
+        }
+    }
     void FixedUpdate()
     {
         MoveLand();
-    
     }
 }

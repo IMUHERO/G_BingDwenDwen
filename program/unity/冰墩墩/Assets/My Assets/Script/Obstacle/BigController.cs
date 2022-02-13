@@ -24,7 +24,7 @@ public class BigController : ObstacleController
             // PlayerController controller = other.GetComponent<PlayerController>();
             PlayerController.playerStage = "over";
             print("播放玩家摔倒动画");
-            print("GAME OVER" + PlayerController.playerStage);
+            print("GAME OVER: " + PlayerController.playerStage);
         }
     }
 }

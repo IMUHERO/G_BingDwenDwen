@@ -99,7 +99,7 @@ public class LandController : ObstacleController
     private void ResetRate()
     {
         Globals.speedRate = 1;
-        Globals.rotateRate = 1;
+        Globals.rotateRate = 3;
     }
     private void ExitSand()
     {
@@ -116,7 +116,7 @@ public class LandController : ObstacleController
             ResetRate();
         }
         inSand = false;
-        IceBornController.iceBornMoveDis += sandDis;
+        SnowBornController.iceBornMoveDis += sandDis;
         sandDis = 0.0f;
     }
     private void ExitIce()
@@ -134,7 +134,7 @@ public class LandController : ObstacleController
             ResetRate();
         }
         inIce = false;
-        IceBornController.iceBornMoveDis += iceDis;
+        SnowBornController.iceBornMoveDis += iceDis;
         iceDis = 0.0f;
     }
     private void ExitSnow()
@@ -152,7 +152,7 @@ public class LandController : ObstacleController
             ResetRate();
         }
         inSnow = false;
-        IceBornController.iceBornMoveDis += snowDis;
+        SnowBornController.iceBornMoveDis += snowDis;
         snowDis = 0.0f;
     }
 }
