@@ -70,6 +70,7 @@ public class GameManager : MonoBehaviour
         // generate
         GameObject snowB = Instantiate(snowBorn, Vector3.zero, Quaternion.identity);
         SnowBornController snowBornController = snowB.GetComponent<SnowBornController>();
+        snowBornController.Restart();
         List<GameObject> snows = new List<GameObject>{snowB};
         gameObjects.Add(Globals.SNOW_BORN_NAME, snows);
         // restart

@@ -9,7 +9,6 @@ public class ObstacleGenerator : MonoBehaviour
     public List<GameObject> bigs;
     public GameObject lanterns;
     public List<GameObject> lands;
-    public GameObject player;
     // 主角下方多远距离生成物体
     public const int GEN_HEIGHT = 15;
     public const int MAX_GEN_HEIGHT = 35;
@@ -46,7 +45,7 @@ public class ObstacleGenerator : MonoBehaviour
 
     private Vector2 getRandomPos()
     {
-        Vector2 playerPos = player.transform.position;
+        Vector2 playerPos = PlayerController.instance.transform.position;
         Vector2 xRange = new Vector2(-Globals.LAND_WIDTH / 2.0f, Globals.LAND_WIDTH / 2.0f);
         Vector2 yRange = new Vector2(playerPos.y - GEN_HEIGHT, playerPos.y - MAX_GEN_HEIGHT);
         float x = Random.Range(xRange.x, xRange.y);

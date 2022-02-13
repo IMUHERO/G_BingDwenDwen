@@ -30,20 +30,22 @@ public class Globals: MonoBehaviour
 
     public const int LAND_HIGH = 15;
 
-    public const int DIS_ADD_SPEED = 50;
-    public const float DIS_ADD_GEN = 120;
+    public const int DIS_ADD_SPEED = 100;
+    public const float DIS_ADD_GEN = 360;
     public const float DIS_ADD_SPEED_RATE = 0.2f;
     public const float DIS_ADD_GEN_RATE = 0.8f;
     // public static float[] DIS_SPEED_RATE = {1.2f, 1.5f, 2.0f};
     // public static float[] DIS_GEN_RATE = {1.2f, 1.5f, 2.0f};
 
-    public const int LAND_WIDTH = 16;
+    public const int LAND_WIDTH = 14;
     // UI
-    public const int TIP_SHOW_TIME = 3;
+    public const float TIP_SHOW_TIME = 1.5f;
+    public const int XRR_SHOW_TIME = 1;
 
     // 雪崩
     public const float ICE_BORN_MOVE_SPEED = 1;
     public const float ICE_BORN_BEGIN_MOVE_DIS = 6;
+    public const float SNOW_BORN_MOVE_RATE = 0.5f;
     // 障碍物
     public const int OBSTABLE_LIVE_DISTANCE = 50;
     // 特殊地板

@@ -7,9 +7,9 @@ public class LandController : ObstacleController
     private bool inSand = false;
     private bool inIce = false;
     private bool inSnow = false;
-    private float sandDis = 0;
-    private float iceDis = 0;
-    private float snowDis = 0;
+    // private float sandDis = 0;
+    // private float iceDis = 0;
+    // private float snowDis = 0;
     void Start()
     {
 
@@ -20,14 +20,14 @@ public class LandController : ObstacleController
     {
         if (inSand)
         {
-            sandDis += Globals.LAND_MOVE_SPEED * Time.deltaTime * (1 - Globals.SAND_SPEED_RATE);
+            SnowBornController.iceBornMoveDis += Globals.LAND_MOVE_SPEED * Time.deltaTime * (1 - Globals.SAND_SPEED_RATE) * Globals.SNOW_BORN_MOVE_RATE;
         }
         if (inIce){
-            iceDis += Globals.LAND_MOVE_SPEED * Time.deltaTime * (1 - Globals.SAND_SPEED_RATE);
+            SnowBornController.iceBornMoveDis += Globals.LAND_MOVE_SPEED * Time.deltaTime * (1 - Globals.ICE_SPEED_RATE) * Globals.SNOW_BORN_MOVE_RATE;
         }
         if (inSnow)
         {
-            snowDis += Globals.LAND_MOVE_SPEED * Time.deltaTime * (1 - Globals.SAND_SPEED_RATE);
+            SnowBornController.iceBornMoveDis += Globals.LAND_MOVE_SPEED * Time.deltaTime * (1 - Globals.SNOW_SPEED_RATE) * Globals.SNOW_BORN_MOVE_RATE;
         }
     }
 
@@ -116,8 +116,8 @@ public class LandController : ObstacleController
             ResetRate();
         }
         inSand = false;
-        SnowBornController.iceBornMoveDis += sandDis;
-        sandDis = 0.0f;
+        // SnowBornController.iceBornMoveDis += sandDis;
+        // sandDis = 0.0f;
     }
     private void ExitIce()
     {
@@ -134,8 +134,8 @@ public class LandController : ObstacleController
             ResetRate();
         }
         inIce = false;
-        SnowBornController.iceBornMoveDis += iceDis;
-        iceDis = 0.0f;
+        // SnowBornController.iceBornMoveDis += iceDis;
+        // iceDis = 0.0f;
     }
     private void ExitSnow()
     {
@@ -152,7 +152,5 @@ public class LandController : ObstacleController
             ResetRate();
         }
         inSnow = false;
-        SnowBornController.iceBornMoveDis += snowDis;
-        snowDis = 0.0f;
     }
 }

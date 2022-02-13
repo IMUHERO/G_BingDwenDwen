@@ -11,6 +11,7 @@ public class UIController : MonoBehaviour
     public Text tipSpeedUI;
     public Text tipGenUI;
     public Text resultText;
+    public GameObject XueRongRong;
     public GameObject resultUI;
     // private float onSecondCd = 0;
     private string scoreSuffix = "Distance";
@@ -25,6 +26,7 @@ public class UIController : MonoBehaviour
 
     public void Restart()
     {
+        XueRongRong.SetActive(false);
         tipSpeedUI.gameObject.SetActive(false);
         tipGenUI.gameObject.SetActive(false);
         resultUI.SetActive(false);
@@ -53,6 +55,16 @@ public class UIController : MonoBehaviour
     void waitDestoryGenTip()
     {
         tipGenUI.gameObject.SetActive(false);
+    }
+
+    public void showXueRongRong(){
+        XueRongRong.SetActive(true);
+        Invoke("waitDestoryXRR", Globals.XRR_SHOW_TIME);
+    }
+
+    void waitDestoryXRR()
+    {
+        XueRongRong.SetActive(false);
     }
 
     private void setScoreText(float M)

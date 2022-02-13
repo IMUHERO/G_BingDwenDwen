@@ -9,27 +9,23 @@ public class SnowBornController : MonoBehaviour
     // private bool isBeginMove = false;
     private Animator animator;
     // private float curBeginDis = 0;
+    private void Awake() {
+        animator = GetComponent<Animator>();
+    }
     void Start()
     {
-        animator = GetComponent<Animator>();
-        PlayAni("begin");
+        // PlayAni("begin");
     }
 
     // Update is called once per frame
     void Update()
     {
-        // if (iceBornMoveDis > 0)
-        // {
-        //     Move(Globals.ICE_BORN_MOVE_SPEED);
-        // }
-        // else if(iceBornMoveDis < 0)
-        // {
-        //     Move(-Globals.ICE_BORN_MOVE_SPEED);
-        // }
-        // if(PlayerController.playerStage != "moving"){
-        //     return;
-        // }
-        TestMove();
+
+        if(PlayerController.playerStage != Globals.PLAYER_STAGE_MOVING){
+            return;
+        }
+        Move();
+        // TestMove();
     }
 
     public void PlayAni(string name){
@@ -42,14 +38,18 @@ public class SnowBornController : MonoBehaviour
         transform.position = position;
     }
 
-    private void Move(float speed)
+    private void Move()
     {
+        if(Mathf.Abs(iceBornMoveDis) < 0.01f){
+            return;
+        }
+        float speed = iceBornMoveDis > 0 ? Globals.ICE_BORN_MOVE_SPEED : -Globals.ICE_BORN_MOVE_SPEED ;
         Vector2 position = transform.position;
         float dis = speed * Time.deltaTime;
         // float dis = Mathf.Clamp(oriDis, 0, iceBornMoveDis);
         position.y -= dis;
         iceBornMoveDis -= dis;
-        print("move: " + ' ' + transform.position.y + ' ' + iceBornMoveDis + ' ' + dis);
+        // print("move: " + ' ' + transform.position.y + ' ' + iceBornMoveDis + ' ' + dis);
         transform.position = position;
     }
 
@@ -65,17 +65,18 @@ public class SnowBornController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.tag == "Player")
+        print("innnnnnnnnnnnnnn" + other);
+        if (other.tag == "Player")
         {
             // PlayerController controller = other.GetComponent<PlayerController>();
             PlayerController.instance.GameOver();
-            print("播放玩家摔倒动画");
+            // print("播放玩家摔倒动画");
             print("GAME OVER" + PlayerController.playerStage);
             iceBornMoveDis = 15;
         }
     }
 
     public void Restart(){
-
+        iceBornMoveDis = 0;
     }
 }

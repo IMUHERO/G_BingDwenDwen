@@ -8,7 +8,7 @@ public class PlayerController : MonoBehaviour
     public static PlayerController instance { get; private set; }
     public static string playerStage;
     public float moveSpeed;
-    public GameObject winterCar;
+    // public GameObject winterCar;
     private float MAX_MOVE = 3.0f;
     private float curMove = 0.0f;
     private float horizontal;
