@@ -73,17 +73,17 @@ public class IceLandGenerator : MonoBehaviour
         int addSpeedTimes = (int)(Globals.totalDistance / Globals.DIS_ADD_SPEED);
         int addGenTimes = (int)(Globals.totalDistance / Globals.DIS_ADD_GEN);
         // print(">>>>>>>>>>>>>>>>" + addSpeedTimes + ' ' + addGenTimes);
-        if (addSpeedTimes > 0 && !addSpeedRates.Contains(addSpeedTimes))
-        {
-            addSpeedRates.Add(addSpeedTimes);
-            Globals.distanceSpeedRate += Globals.DIS_ADD_SPEED_RATE;
-            UIController.instance.showTipText(Globals.TIP_SPEED);
-        }
         if (addGenTimes > 0 && !addGenerateRates.Contains(addGenTimes))
         {
             addGenerateRates.Add(addGenTimes);
             Globals.distanceGenerateRate *= Globals.DIS_ADD_GEN_RATE;
             UIController.instance.showTipText(Globals.TIP_GENERATE);
+        }
+        else if (addSpeedTimes > 0 && !addSpeedRates.Contains(addSpeedTimes))
+        {
+            addSpeedRates.Add(addSpeedTimes);
+            Globals.distanceSpeedRate += Globals.DIS_ADD_SPEED_RATE;
+            UIController.instance.showTipText(Globals.TIP_SPEED);
         }
     }
 

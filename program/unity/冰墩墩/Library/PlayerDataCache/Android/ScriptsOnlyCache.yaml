@@ -2,13 +2,14 @@ ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
     - BigController
-    - IceBornController
+    - GameManager
     - IceLandGenerator
     - LandController
     - LanternController
     - ObstacleGenerator
     - PlayerController
     - SmallController
+    - SnowBornController
     - UIController
     - UIHealthBar
     - UILeftBtn
@@ -17,16 +18,19 @@ ScriptsOnlyBuild:
     - Cinemachine.Cinemachine3rdPersonFollow
     - Cinemachine.CinemachineBrain
     - Cinemachine.CinemachineComposer
+    - Cinemachine.CinemachineConfiner
     - Cinemachine.CinemachinePipeline
     - Cinemachine.CinemachineVirtualCamera
     Unity.2D.Animation.Editor.dll:
     - UnityEditor.U2D.Animation.BoneGizmo
+    Unity.2D.Animation.Runtime.dll:
+    - UnityEngine.U2D.Animation.BufferManager
+    - UnityEngine.U2D.Animation.SpriteSkin
     Unity.2D.IK.Editor.dll:
     - UnityEditor.U2D.IK.IKEditorManager
     - UnityEditor.U2D.IK.IKGizmos
     Unity.2D.Tilemap.Editor.dll:
     - UnityEditor.Tilemaps.GridBrush
-    - UnityEditor.Tilemaps.GridBrushEditor
     - UnityEditor.Tilemaps.GridPaintPaletteClipboard
     - UnityEditor.Tilemaps.GridPaintPaletteWindow
     - UnityEditor.Tilemaps.GridPaintingState
@@ -82,6 +86,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 50
       Script: {instanceID: 0}
+    - Class: 60
+      Script: {instanceID: 0}
     - Class: 61
       Script: {instanceID: 0}
     - Class: 74
@@ -99,63 +105,69 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1554}
     - Class: 114
-      Script: {instanceID: 1906}
+      Script: {instanceID: 1628}
     - Class: 114
-      Script: {instanceID: 2148}
+      Script: {instanceID: 1904}
     - Class: 114
-      Script: {instanceID: 2334}
+      Script: {instanceID: 1934}
     - Class: 114
-      Script: {instanceID: 2342}
+      Script: {instanceID: 2146}
     - Class: 114
-      Script: {instanceID: 2744}
+      Script: {instanceID: 2332}
     - Class: 114
-      Script: {instanceID: 2796}
+      Script: {instanceID: 2340}
     - Class: 114
-      Script: {instanceID: 2884}
+      Script: {instanceID: 2740}
     - Class: 114
-      Script: {instanceID: 2990}
+      Script: {instanceID: 2792}
     - Class: 114
-      Script: {instanceID: 3084}
+      Script: {instanceID: 2810}
     - Class: 114
-      Script: {instanceID: 3240}
+      Script: {instanceID: 2880}
     - Class: 114
-      Script: {instanceID: 3414}
+      Script: {instanceID: 2986}
     - Class: 114
-      Script: {instanceID: 3418}
+      Script: {instanceID: 3080}
     - Class: 114
-      Script: {instanceID: 3496}
+      Script: {instanceID: 3234}
     - Class: 114
-      Script: {instanceID: 3504}
+      Script: {instanceID: 3408}
     - Class: 114
-      Script: {instanceID: 3636}
+      Script: {instanceID: 3412}
     - Class: 114
-      Script: {instanceID: 4178}
+      Script: {instanceID: 3490}
     - Class: 114
-      Script: {instanceID: 4446}
+      Script: {instanceID: 3498}
     - Class: 114
-      Script: {instanceID: 4750}
+      Script: {instanceID: 3630}
     - Class: 114
-      Script: {instanceID: 4782}
+      Script: {instanceID: 4032}
     - Class: 114
-      Script: {instanceID: 5002}
+      Script: {instanceID: 4174}
     - Class: 114
-      Script: {instanceID: 5124}
+      Script: {instanceID: 4442}
     - Class: 114
-      Script: {instanceID: 5134}
+      Script: {instanceID: 4746}
     - Class: 114
-      Script: {instanceID: 5508}
+      Script: {instanceID: 4778}
     - Class: 114
-      Script: {instanceID: 5552}
+      Script: {instanceID: 4998}
     - Class: 114
-      Script: {instanceID: 6040}
+      Script: {instanceID: 5120}
     - Class: 114
-      Script: {instanceID: 6140}
+      Script: {instanceID: 5130}
     - Class: 114
-      Script: {instanceID: 6212}
+      Script: {instanceID: 5504}
     - Class: 114
-      Script: {instanceID: 32796}
+      Script: {instanceID: 5548}
     - Class: 114
-      Script: {instanceID: 32804}
+      Script: {instanceID: 5912}
+    - Class: 114
+      Script: {instanceID: 6038}
+    - Class: 114
+      Script: {instanceID: 6136}
+    - Class: 114
+      Script: {instanceID: 6208}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -173,6 +185,8 @@ ScriptsOnlyBuild:
     - Class: 223
       Script: {instanceID: 0}
     - Class: 224
+      Script: {instanceID: 0}
+    - Class: 19719996
       Script: {instanceID: 0}
     - Class: 156049354
       Script: {instanceID: 0}
@@ -285,12 +299,6 @@ ScriptsOnlyBuild:
     className: Shadow
   - hash:
       serializedVersion: 2
-      Hash: 5d13011dd1652f032cd66c94f16351f8
-    assemblyName: Unity.2D.Animation.Samples.Runtime.dll
-    namespaceName: Unity.U2D.Animation.Sample
-    className: SwapFullSkin
-  - hash:
-      serializedVersion: 2
       Hash: 300fd99066f8c288e85f5e81ce65fe34
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
@@ -303,10 +311,10 @@ ScriptsOnlyBuild:
     className: CinemachineCameraOffset
   - hash:
       serializedVersion: 2
-      Hash: ad762b84d657a8ad2847c0255ee12b87
-    assemblyName: Unity.2D.Animation.Samples.Runtime.dll
-    namespaceName: Unity.U2D.Animation.Sample
-    className: SwapPart
+      Hash: b4796e3d65d70d593c3beeb72f1d9121
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: UIRightBtn
   - hash:
       serializedVersion: 2
       Hash: 6225eb0973ab0af667bc5f9d1b1b18de
@@ -477,12 +485,6 @@ ScriptsOnlyBuild:
     className: CinemachineHardLookAt
   - hash:
       serializedVersion: 2
-      Hash: bec7e0fb345d2a0fed04972a840cf198
-    assemblyName: Unity.2D.Animation.Samples.Dependency.dll
-    namespaceName: Unity.U2D.Animation.Sample.Dependency
-    className: AnimationSampleDependency
-  - hash:
-      serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: UnityEngine.TestRunner.dll
     namespaceName: UnityEngine.TestRunner.Utils
@@ -537,7 +539,7 @@ ScriptsOnlyBuild:
     className: CinemachineTrack
   - hash:
       serializedVersion: 2
-      Hash: 265f61f3c5f33fba110f32a1b2acd4f4
+      Hash: 17110d845e4bbb6514d981d588bfa5f6
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: ObstacleGenerator
@@ -549,7 +551,7 @@ ScriptsOnlyBuild:
     className: Cinemachine3rdPersonFollow
   - hash:
       serializedVersion: 2
-      Hash: 84b13b04ba0a0f838634df554a72752e
+      Hash: 459b50185a167c1d210a783633c72823
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PlayerController
@@ -661,6 +663,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
+  - hash:
+      serializedVersion: 2
+      Hash: 9c9cfa02f0f0f17c229d109aa79d45a6
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: GameManager
   - hash:
       serializedVersion: 2
       Hash: 3164bc883ff663a5cdb32d1ef7e7c0c5
@@ -816,7 +824,7 @@ ScriptsOnlyBuild:
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
-    className: IceBornController
+    className: SnowBornController
   - hash:
       serializedVersion: 2
       Hash: 523ce309f50d9eee6a8fc0e2f86c9c97
@@ -861,7 +869,7 @@ ScriptsOnlyBuild:
     className: ScrollRect
   - hash:
       serializedVersion: 2
-      Hash: 1e0d00abf18e674beac738f2b87ddfd9
+      Hash: 9e8dead0479d72056e9bd5f1f5d41914
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: UIController
@@ -1011,6 +1019,12 @@ ScriptsOnlyBuild:
     className: BufferManager
   - hash:
       serializedVersion: 2
+      Hash: b4796e3d65d70d593c3beeb72f1d9121
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: UILeftBtn
+  - hash:
+      serializedVersion: 2
       Hash: 8220b46879dc5e37db1b940c938f5744
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
@@ -1053,12 +1067,6 @@ ScriptsOnlyBuild:
     className: CinemachineBlendListCamera
   - hash:
       serializedVersion: 2
-      Hash: 04ce5ba03a87a609c0116b06103c71f4
-    assemblyName: Unity.2D.Animation.Samples.Runtime.dll
-    namespaceName: Unity.U2D.Animation.Sample
-    className: LoadSwapDLC
-  - hash:
-      serializedVersion: 2
       Hash: 762a30c8d779b11af16ed9ce1f2d32fa
     assemblyName: Unity.2D.IK.Runtime.dll
     namespaceName: UnityEngine.U2D.IK
@@ -1075,18 +1083,6 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: UIHealthBar
-  - hash:
-      serializedVersion: 2
-      Hash: b4796e3d65d70d593c3beeb72f1d9121
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: UILeftBtn
-  - hash:
-      serializedVersion: 2
-      Hash: b4796e3d65d70d593c3beeb72f1d9121
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: UIRightBtn
   platform: 13
   scenePathNames:
   - Assets/My Assets/Scene/BingDwenDwen.unity

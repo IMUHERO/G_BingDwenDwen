@@ -24,11 +24,13 @@ public class LanternController : ObstacleController
         if(other.tag == "Player"){
             GameObject.Destroy(gameObject);
             if(Globals.collectNum >= Globals.MaxCollectNum){
+                Globals.collectNum = 0;
                 return;
             }
             Globals.collectNum += 1;
             UIController.instance.showXueRongRong();
-            UIHealthBar.instance.SetValue(Globals.collectNum / (float)Globals.MaxCollectNum);
+            float value = Globals.collectNum / (float)Globals.MaxCollectNum;
+            UIHealthBar.instance.SetValue(value);
             print("collect num: " + Globals.collectNum + " " + Globals.collectNum / (float)Globals.MaxCollectNum);
         }
     }
