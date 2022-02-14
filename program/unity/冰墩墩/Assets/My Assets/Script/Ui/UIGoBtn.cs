@@ -16,6 +16,7 @@ public class UIGoBtn : MonoBehaviour
     }
 
     public void onGoBtn(){
+        print(">>> on go btn ........");
         if(!Globals.canGo){
             return;
         }
