@@ -39,20 +39,20 @@ public class LandController : ObstacleController
     private void InSand(bool firstIn = true)
     {
         inSand = true;
-        Globals.speedRate = Globals.SAND_SPEED_RATE;
-        Globals.rotateRate = Globals.SAND_ROTATE_RATE;
+        Globals.speedRate = Globals.SAND_SPEED_RATE * Globals.BASE_SPEED_RATE;
+        Globals.rotateRate = Globals.SAND_ROTATE_RATE * Globals.BASE_ROTATE_RATE;
     }
     private void InIce(bool firstIn = true)
     {
         inIce = true;
-        Globals.speedRate = Globals.ICE_SPEED_RATE;
-        Globals.rotateRate = Globals.ICE_ROTATE_RATE;
+        Globals.speedRate = Globals.ICE_SPEED_RATE * Globals.BASE_SPEED_RATE;
+        Globals.rotateRate = Globals.ICE_ROTATE_RATE * Globals.BASE_ROTATE_RATE;
     }
     private void InSnow(bool firstIn = true)
     {
         inSnow = true;
-        Globals.speedRate = Globals.SNOW_SPEED_RATE;
-        Globals.rotateRate = Globals.SNOW_ROTATE_RATE;
+        Globals.speedRate = Globals.SNOW_SPEED_RATE * Globals.BASE_SPEED_RATE;
+        Globals.rotateRate = Globals.SNOW_ROTATE_RATE * Globals.BASE_ROTATE_RATE;
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -98,8 +98,8 @@ public class LandController : ObstacleController
 
     private void ResetRate()
     {
-        Globals.speedRate = 1;
-        Globals.rotateRate = 3;
+        Globals.speedRate = Globals.BASE_SPEED_RATE;
+        Globals.rotateRate = Globals.BASE_ROTATE_RATE;
     }
     private void ExitSand()
     {

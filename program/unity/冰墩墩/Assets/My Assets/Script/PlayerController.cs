@@ -55,10 +55,10 @@ public class PlayerController : MonoBehaviour
         {
             trueHori = Globals.horizontal;
         }
-        else
-        {
-            Globals.horizontal = 0;
-        }
+        // else
+        // {
+        //     Globals.horizontal = 0;
+        // }
         float dis = trueHori * Globals.rotateRate * Time.deltaTime;
         // print("........" + trueHori);
         PlayerController.instance.animator.SetFloat(Globals.PLAYER_MOVE_HORI, trueHori);

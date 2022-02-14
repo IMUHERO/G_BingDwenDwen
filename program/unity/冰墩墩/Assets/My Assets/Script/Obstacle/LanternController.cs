@@ -20,7 +20,7 @@ public class LanternController : ObstacleController
         base.Moving();
     }
 
-    private void OnTriggerEnter2D(Collider2D other) {
+    private void OnTriggerStay2D(Collider2D other) {
         if(other.tag == "Player"){
             GameObject.Destroy(gameObject);
             if(Globals.collectNum >= Globals.MaxCollectNum){

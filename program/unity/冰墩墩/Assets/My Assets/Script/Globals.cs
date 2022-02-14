@@ -14,26 +14,36 @@ public class Globals: MonoBehaviour
     public static float distanceSpeedRate;
     public static float distanceGenerateRate;
 
+    public static bool leftIn;
+    public static bool rightIn;
+    public static string countDownBtn;
+
     public static void Restart(){
         collectNum = 0;
-        rotateRate = 3;
-        speedRate = 1;
+        rotateRate = BASE_ROTATE_RATE;
+        speedRate = BASE_SPEED_RATE;
         generateRate = 1;
         totalDistance = 0;
         horizontal = 0.0f;
         distanceSpeedRate = 1;
         distanceGenerateRate = 1;
+        leftIn = false;
+        rightIn = false;
+        countDownBtn = "";
     }
     // 主要参数
+    public const float HORI_CHANGE_RATE = 2f;
+    public const float BASE_ROTATE_RATE = 6;
+    public const float BASE_SPEED_RATE = 1;
     public const float LAND_MOVE_SPEED = 4.0f;
     public const float MaxCollectNum = 10.0f;   // 积攒5个释放大招
 
     public const int LAND_HIGH = 15;
 
-    public const int DIS_ADD_SPEED = 100;
-    public const float DIS_ADD_GEN = 250;
-    public const float DIS_ADD_SPEED_RATE = 0.1f;
-    public const float DIS_ADD_GEN_RATE = 0.9f;
+    public const int DIS_ADD_SPEED = 200;
+    public const float DIS_ADD_GEN = 100;
+    public const float DIS_ADD_SPEED_RATE = 0.15f;
+    public const float DIS_ADD_GEN_RATE = 0.85f;
     // public static float[] DIS_SPEED_RATE = {1.2f, 1.5f, 2.0f};
     // public static float[] DIS_GEN_RATE = {1.2f, 1.5f, 2.0f};
 
