@@ -22,7 +22,7 @@ public class BigController : ObstacleController
     private void OnCollisionEnter2D(Collision2D other) {
         if(other.gameObject.tag == "Player"){
             // PlayerController controller = other.GetComponent<PlayerController>();
-            PlayerController.instance.GameOver();
+            GameManager.instance.GameOver();
             print("播放玩家摔倒动画");
             print("GAME OVER: " + PlayerController.playerStage);
         }

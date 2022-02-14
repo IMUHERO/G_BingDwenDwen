@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class LanternController : ObstacleController
 {
+    public AudioClip addNumClip;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,10 +23,11 @@ public class LanternController : ObstacleController
 
     private void OnTriggerStay2D(Collider2D other) {
         if(other.tag == "Player"){
+            PlayerController.instance.PlaySound(addNumClip, 0.8f);
             GameObject.Destroy(gameObject);
             if(Globals.collectNum >= Globals.MaxCollectNum){
                 Globals.collectNum = 0;
-                return;
+                // return;
             }
             Globals.collectNum += 1;
             UIController.instance.showXueRongRong();

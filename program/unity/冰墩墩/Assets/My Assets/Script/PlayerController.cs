@@ -13,8 +13,12 @@ public class PlayerController : MonoBehaviour
     private float curMove = 0.0f;
     private float horizontal;
     private Animator animator;
+    private AudioSource audioSource;
+    public AudioClip skiClip;
+    public AudioClip FailueClip;
     private void Awake() {
         animator = GetComponent<Animator>();
+        audioSource = GetComponent<AudioSource>() ;
         instance = this;
     }
     void Start()
@@ -41,6 +45,12 @@ public class PlayerController : MonoBehaviour
         curMove = 0;
         playerStage = Globals.PLAYER_STAGE_BEGIN;
         animator.SetTrigger(Globals.PLAYER_ANI_BEGIN);
+        PlaySound(skiClip, 0.4f);
+    }
+
+    public void PlaySound(AudioClip clip, float volume = 1.0f){
+        audioSource.PlayOneShot(clip);
+        audioSource.volume = volume;
     }
 
     private void Rotating()
@@ -90,5 +100,6 @@ public class PlayerController : MonoBehaviour
     public void GameOver(){
         PlayerController.playerStage = Globals.PLAYER_STAGE_OVER;
         animator.SetTrigger(Globals.PLAYER_ANI_OVER);
+        PlaySound(FailueClip, 0.7f);
     }
 }

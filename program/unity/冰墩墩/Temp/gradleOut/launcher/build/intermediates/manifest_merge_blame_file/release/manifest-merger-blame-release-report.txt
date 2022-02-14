@@ -87,8 +87,8 @@
 49-->[:unityLibrary] /Users/imuhero/program/unity/冰墩墩/Temp/gradleOut/unityLibrary/build/intermediates/library_manifest/release/AndroidManifest.xml:35:13-44
 50            android:resizeableActivity="false"
 50-->[:unityLibrary] /Users/imuhero/program/unity/冰墩墩/Temp/gradleOut/unityLibrary/build/intermediates/library_manifest/release/AndroidManifest.xml:36:13-47
-51            android:screenOrientation="fullSensor"
-51-->[:unityLibrary] /Users/imuhero/program/unity/冰墩墩/Temp/gradleOut/unityLibrary/build/intermediates/library_manifest/release/AndroidManifest.xml:37:13-51
+51            android:screenOrientation="landscape"
+51-->[:unityLibrary] /Users/imuhero/program/unity/冰墩墩/Temp/gradleOut/unityLibrary/build/intermediates/library_manifest/release/AndroidManifest.xml:37:13-50
 52            android:theme="@style/UnityThemeSelector" >
 52-->[:unityLibrary] /Users/imuhero/program/unity/冰墩墩/Temp/gradleOut/unityLibrary/build/intermediates/library_manifest/release/AndroidManifest.xml:38:13-54
 53            <intent-filter>
@@ -144,7 +144,7 @@
 79-->[:unityLibrary] /Users/imuhero/program/unity/冰墩墩/Temp/gradleOut/unityLibrary/build/intermediates/library_manifest/release/AndroidManifest.xml:65:9-67:68
 80            android:name="unity.build-id"
 80-->[:unityLibrary] /Users/imuhero/program/unity/冰墩墩/Temp/gradleOut/unityLibrary/build/intermediates/library_manifest/release/AndroidManifest.xml:66:13-42
-81            android:value="ab0de105-bea7-48b6-852e-497b51abed70" />
+81            android:value="c4db776e-f376-409d-ae3e-9ff309a46a51" />
 81-->[:unityLibrary] /Users/imuhero/program/unity/冰墩墩/Temp/gradleOut/unityLibrary/build/intermediates/library_manifest/release/AndroidManifest.xml:67:13-65
 82    </application>
 83

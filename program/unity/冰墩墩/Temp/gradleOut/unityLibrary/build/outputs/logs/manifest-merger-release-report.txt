@@ -28,15 +28,15 @@ ADDED from /Users/imuhero/program/unity/冰墩墩/Temp/gradleOut/unityLibrary/sr
 activity#com.unity3d.player.UnityPlayerActivity
 ADDED from /Users/imuhero/program/unity/冰墩墩/Temp/gradleOut/unityLibrary/src/main/AndroidManifest.xml:5:5-12:16
 	android:screenOrientation
-		ADDED from /Users/imuhero/program/unity/冰墩墩/Temp/gradleOut/unityLibrary/src/main/AndroidManifest.xml:5:111-149
+		ADDED from /Users/imuhero/program/unity/冰墩墩/Temp/gradleOut/unityLibrary/src/main/AndroidManifest.xml:5:111-148
 	android:launchMode
-		ADDED from /Users/imuhero/program/unity/冰墩墩/Temp/gradleOut/unityLibrary/src/main/AndroidManifest.xml:5:150-181
+		ADDED from /Users/imuhero/program/unity/冰墩墩/Temp/gradleOut/unityLibrary/src/main/AndroidManifest.xml:5:149-180
 	android:hardwareAccelerated
-		ADDED from /Users/imuhero/program/unity/冰墩墩/Temp/gradleOut/unityLibrary/src/main/AndroidManifest.xml:5:399-434
+		ADDED from /Users/imuhero/program/unity/冰墩墩/Temp/gradleOut/unityLibrary/src/main/AndroidManifest.xml:5:398-433
 	android:resizeableActivity
-		ADDED from /Users/imuhero/program/unity/冰墩墩/Temp/gradleOut/unityLibrary/src/main/AndroidManifest.xml:5:364-398
+		ADDED from /Users/imuhero/program/unity/冰墩墩/Temp/gradleOut/unityLibrary/src/main/AndroidManifest.xml:5:363-397
 	android:configChanges
-		ADDED from /Users/imuhero/program/unity/冰墩墩/Temp/gradleOut/unityLibrary/src/main/AndroidManifest.xml:5:182-363
+		ADDED from /Users/imuhero/program/unity/冰墩墩/Temp/gradleOut/unityLibrary/src/main/AndroidManifest.xml:5:181-362
 	android:theme
 		ADDED from /Users/imuhero/program/unity/冰墩墩/Temp/gradleOut/unityLibrary/src/main/AndroidManifest.xml:5:69-110
 	android:name

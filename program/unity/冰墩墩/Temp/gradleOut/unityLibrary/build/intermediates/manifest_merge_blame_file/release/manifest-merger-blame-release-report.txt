@@ -52,15 +52,15 @@
 32            android:name="com.unity3d.player.UnityPlayerActivity"
 32-->/Users/imuhero/program/unity/冰墩墩/Temp/gradleOut/unityLibrary/src/main/AndroidManifest.xml:5:15-68
 33            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|orientation|screenLayout|uiMode|screenSize|smallestScreenSize|fontScale|layoutDirection|density"
-33-->/Users/imuhero/program/unity/冰墩墩/Temp/gradleOut/unityLibrary/src/main/AndroidManifest.xml:5:182-363
+33-->/Users/imuhero/program/unity/冰墩墩/Temp/gradleOut/unityLibrary/src/main/AndroidManifest.xml:5:181-362
 34            android:hardwareAccelerated="false"
-34-->/Users/imuhero/program/unity/冰墩墩/Temp/gradleOut/unityLibrary/src/main/AndroidManifest.xml:5:399-434
+34-->/Users/imuhero/program/unity/冰墩墩/Temp/gradleOut/unityLibrary/src/main/AndroidManifest.xml:5:398-433
 35            android:launchMode="singleTask"
-35-->/Users/imuhero/program/unity/冰墩墩/Temp/gradleOut/unityLibrary/src/main/AndroidManifest.xml:5:150-181
+35-->/Users/imuhero/program/unity/冰墩墩/Temp/gradleOut/unityLibrary/src/main/AndroidManifest.xml:5:149-180
 36            android:resizeableActivity="false"
-36-->/Users/imuhero/program/unity/冰墩墩/Temp/gradleOut/unityLibrary/src/main/AndroidManifest.xml:5:364-398
-37            android:screenOrientation="fullSensor"
-37-->/Users/imuhero/program/unity/冰墩墩/Temp/gradleOut/unityLibrary/src/main/AndroidManifest.xml:5:111-149
+36-->/Users/imuhero/program/unity/冰墩墩/Temp/gradleOut/unityLibrary/src/main/AndroidManifest.xml:5:363-397
+37            android:screenOrientation="landscape"
+37-->/Users/imuhero/program/unity/冰墩墩/Temp/gradleOut/unityLibrary/src/main/AndroidManifest.xml:5:111-148
 38            android:theme="@style/UnityThemeSelector" >
 38-->/Users/imuhero/program/unity/冰墩墩/Temp/gradleOut/unityLibrary/src/main/AndroidManifest.xml:5:69-110
 39            <intent-filter>
@@ -116,7 +116,7 @@
 65-->/Users/imuhero/program/unity/冰墩墩/Temp/gradleOut/unityLibrary/src/main/AndroidManifest.xml:17:5-101
 66            android:name="unity.build-id"
 66-->/Users/imuhero/program/unity/冰墩墩/Temp/gradleOut/unityLibrary/src/main/AndroidManifest.xml:17:16-45
-67            android:value="ab0de105-bea7-48b6-852e-497b51abed70" />
+67            android:value="c4db776e-f376-409d-ae3e-9ff309a46a51" />
 67-->/Users/imuhero/program/unity/冰墩墩/Temp/gradleOut/unityLibrary/src/main/AndroidManifest.xml:17:46-98
 68    </application>
 69

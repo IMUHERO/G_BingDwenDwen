@@ -11,8 +11,10 @@ public class IceLandGenerator : MonoBehaviour
     private int curIndex;
     private List<int> addSpeedRates;
     private List<int> addGenerateRates;
+    private AudioSource audioSource;
     private void Awake() {
         instance = this;
+        audioSource = GetComponent<AudioSource>();
     }
     // Start is called before the first frame update
     void Start()
@@ -22,7 +24,6 @@ public class IceLandGenerator : MonoBehaviour
 
     public void Restart()
     {
-
         addSpeedRates = new List<int>();
         addGenerateRates = new List<int>();
         for (int i = 0; i < lands.Count; i++)
@@ -34,6 +35,20 @@ public class IceLandGenerator : MonoBehaviour
         }
         curIndex = 0;
         totalDistance = 0;
+        PlaySound();
+    }
+
+    public void PlaySound(bool needPlay = true){
+        if(needPlay){
+            audioSource.Play();
+        }
+        else{
+            audioSource.Stop();
+        }
+    }
+
+    public void GameOver(){
+        PlaySound(false);
     }
 
     private void MoveLand()
