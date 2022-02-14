@@ -1583,7 +1583,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 4b4dabbb95b864ec6803d432aa7efb5f, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 0.4
   m_Pitch: 1
   Loop: 1
@@ -1725,7 +1725,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 23a77c758ea8c432baf575c455777122, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 0.8
   m_Pitch: 1
   Loop: 1
@@ -2235,7 +2235,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 650297691}
         m_TargetAssemblyTypeName: UIController, Assembly-CSharp
-        m_MethodName: onRestart
+        m_MethodName: onBtnStart
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2568,6 +2568,7 @@ MonoBehaviour:
   resultText: {fileID: 950487385}
   XueRongRong: {fileID: 1848925996}
   resultUI: {fileID: 445991739}
+  startUI: {fileID: 1276585237}
 --- !u!1 &781995414
 GameObject:
   m_ObjectHideFlags: 0
@@ -7922,7 +7923,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u64CD\u4F5C\u8BF4\u660E\uFF1A\n\u79FB\u52A8\uFF1A\u2191\u2193\u2190\u2192\n\u5927\u62DB\uFF1AJ"
+  m_Text: "\u64CD\u4F5C\u8BF4\u660E\uFF1A\n\u79FB\u52A8\uFF1A\u2190\u2192\n\u6280\u80FD\uFF1AJ"
 --- !u!222 &1201924136
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -13774,7 +13775,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1848925997
 RectTransform:
   m_ObjectHideFlags: 0

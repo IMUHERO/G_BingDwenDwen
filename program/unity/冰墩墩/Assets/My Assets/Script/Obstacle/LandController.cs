@@ -18,6 +18,9 @@ public class LandController : ObstacleController
     // Update is called once per frame
     void Update()
     {
+        if (Globals.isPlayerGo){
+            return;
+        }
         if (inSand)
         {
             SnowBornController.iceBornMoveDis += Globals.LAND_MOVE_SPEED * Time.deltaTime * (1 - Globals.SAND_SPEED_RATE) * Globals.SNOW_BORN_MOVE_RATE;

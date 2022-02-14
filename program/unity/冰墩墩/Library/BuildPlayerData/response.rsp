@@ -12,6 +12,7 @@
 -a="/Users/imuhero/program/unity/冰墩墩/Library/PlayerScriptAssemblies/Unity.2D.Animation.Runtime.dll"
 -a="/Users/imuhero/program/unity/冰墩墩/Library/PlayerScriptAssemblies/Unity.2D.Common.Runtime.dll"
 -a="/Users/imuhero/program/unity/冰墩墩/Library/PlayerScriptAssemblies/Unity.2D.SpriteShape.Runtime.dll"
+-a="/Users/imuhero/program/unity/冰墩墩/Library/PlayerScriptAssemblies/Unity.Postprocessing.Runtime.dll"
 -a="/Users/imuhero/program/unity/冰墩墩/Library/PackageCache/com.unity.nuget.newtonsoft-json@2.0.0/Runtime/AOT/Newtonsoft.Json.dll"
 -a="/Users/imuhero/program/unity/冰墩墩/Library/PackageCache/com.unity.nuget.newtonsoft-json@2.0.0/Runtime/Portable/Newtonsoft.Json.dll"
 -a="/Users/imuhero/program/unity/冰墩墩/Library/PackageCache/com.unity.nuget.newtonsoft-json@2.0.0/Runtime/Newtonsoft.Json.dll"
