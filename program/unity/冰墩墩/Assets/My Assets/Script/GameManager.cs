@@ -11,6 +11,8 @@ public class GameManager : MonoBehaviour
     // 'snowBorn', 'small', 'big', 'land'
     public static Dictionary<string, List<GameObject>> gameObjects;
 
+    private float playerGoCd = 0;
+
     private void Awake()
     {
         instance = this;
@@ -20,13 +22,71 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        GameRestart();
+        // GameRestart();
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (Globals.isPlayerGo)
+        {
+            playerGoCd += Time.deltaTime;
+            if (playerGoCd >= 5)
+            {
+                playerGoCd = 0;
+                GameManager.instance.OnGo(false);
+            }
+        }
+    }
+    public void OnCanGo(bool canGo)
+    {
+        Globals.canGo = canGo;
+        UIController.instance.onCanGo(canGo);
+    }
+    public void OnGo(bool isGo)
+    {
+        if (isGo)
+        {
+            Globals.speedRate = Globals.BASE_SPEED_RATE;
+            Globals.canGo = false;
+            Globals.collectNum = 0;
+            SnowBornController.iceBornMoveDis -= 1;
+        }
+        Globals.isPlayerGo = isGo;
+        UIController.instance.OnGo(isGo);
+        PlayerController.instance.OnGo(isGo);
+        CheckObTrigger();
+    }
 
+    private void CheckObTrigger(string obKey= "", GameObject ob = null)
+    {
+        if (obKey != "" && ob != null)
+        {
+            if(obKey == Globals.SMALL_NAME || obKey == Globals.BIG_NAME){
+                ob.GetComponent<BoxCollider2D>().isTrigger = Globals.isPlayerGo;
+            }
+            return;
+        }
+        foreach (var gob in gameObjects)
+        {
+            string key = gob.Key;
+            // print("11111111" + key + ": " + gob.Value);
+            if (key != Globals.SMALL_NAME && key != Globals.BIG_NAME)
+            {
+                continue;
+            }
+            List<GameObject> objects = gob.Value;
+            // print("22222222" + objects);
+            foreach (GameObject item in objects)
+            {
+                print("33333333" + item);
+                if (item != null)
+                {
+                    item.GetComponent<BoxCollider2D>().isTrigger = Globals.isPlayerGo;
+                }
+            }
+            print("innnnnnnnnnnnnnnnnnnnn: " + gob);
+        }
     }
 
     public float GetObstacleSpeed()
@@ -41,6 +101,10 @@ public class GameManager : MonoBehaviour
 
     public float getSpeed()
     {
+        if (Globals.isPlayerGo)
+        {
+            return Globals.PLAYER_GO_SPEED;
+        }
         return Globals.LAND_MOVE_SPEED * Globals.speedRate * Globals.distanceSpeedRate;
 
     }
@@ -54,6 +118,15 @@ public class GameManager : MonoBehaviour
         else
         {
             GameManager.gameObjects[keyName] = new List<GameObject> { ob };
+        }
+        CheckObTrigger(keyName, ob);
+    }
+
+    public void removeObject(string keyName, GameObject ob)
+    {
+        if (GameManager.gameObjects.ContainsKey(keyName))
+        {
+            GameManager.gameObjects[keyName].Remove(ob);
         }
     }
 

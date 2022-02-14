@@ -12,7 +12,7 @@ public class LandController : ObstacleController
     // private float snowDis = 0;
     void Start()
     {
-
+        tagName = Globals.LAND_NAME;
     }
 
     // Update is called once per frame
@@ -55,8 +55,11 @@ public class LandController : ObstacleController
         Globals.rotateRate = Globals.SNOW_ROTATE_RATE * Globals.BASE_ROTATE_RATE;
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerStay2D(Collider2D other)
     {
+        if(Globals.isPlayerGo){
+            return;
+        }
         if (other.tag == "Player")
         {
             if (gameObject.tag == "sand")
@@ -76,7 +79,9 @@ public class LandController : ObstacleController
 
     private void OnTriggerExit2D(Collider2D other)
     {
-
+        if (Globals.isPlayerGo){
+            return;
+        }
         if (other.tag == "Player")
         {
             if (gameObject.tag == "sand")

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Globals: MonoBehaviour
 {
+    public static bool gameStart = false;
     public static int collectNum;
     public static float rotateRate;
     public static float speedRate;
@@ -17,8 +18,12 @@ public class Globals: MonoBehaviour
     public static bool leftIn;
     public static bool rightIn;
     public static string countDownBtn;
+    // 大招
+    public static bool isPlayerGo;
+    public static bool canGo;
 
     public static void Restart(){
+        gameStart = true;
         collectNum = 0;
         rotateRate = BASE_ROTATE_RATE;
         speedRate = BASE_SPEED_RATE;
@@ -30,13 +35,16 @@ public class Globals: MonoBehaviour
         leftIn = false;
         rightIn = false;
         countDownBtn = "";
+        isPlayerGo = false;
+        canGo = false;
     }
     // 主要参数
+    public const float PLAYER_GO_SPEED = 15f;
     public const float HORI_CHANGE_RATE = 2f;
-    public const float BASE_ROTATE_RATE = 6;
+    public const float BASE_ROTATE_RATE = 5;
     public const float BASE_SPEED_RATE = 1;
     public const float LAND_MOVE_SPEED = 4.0f;
-    public const float MaxCollectNum = 10.0f;   // 积攒5个释放大招
+    public const float MaxCollectNum = 10f;   // 积攒5个释放大招
 
     public const int LAND_HIGH = 15;
 
@@ -75,6 +83,7 @@ public class Globals: MonoBehaviour
     public const string SMALL_NAME = "small";
     public const string BIG_NAME = "big";
     public const string LAND_NAME = "land";
+    public const string LANTERN_NAME = "land";
 
     public const string PLAYER_MOVE_TRIGGER = "moving";
     public const string PLAYER_MOVE_HORI = "hori";

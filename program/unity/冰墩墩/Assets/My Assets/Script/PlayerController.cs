@@ -16,6 +16,7 @@ public class PlayerController : MonoBehaviour
     private AudioSource audioSource;
     public AudioClip skiClip;
     public AudioClip FailueClip;
+	public GameObject partical;
     private void Awake() {
         animator = GetComponent<Animator>();
         audioSource = GetComponent<AudioSource>() ;
@@ -29,12 +30,25 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(! Globals.gameStart){
+            return;
+        }
         horizontal = Input.GetAxis("Horizontal");
         // print(horizontal);
+        if (Input.GetKeyDown(KeyCode.J))
+        {
+            if(!Globals.canGo){
+                return;
+            }
+            GameManager.instance.OnGo(true);
+        }
     }
 
     void FixedUpdate()
     {
+        if(! Globals.gameStart){
+            return;
+        }
         BeginMoving();
         Rotating();
     }
@@ -46,6 +60,7 @@ public class PlayerController : MonoBehaviour
         playerStage = Globals.PLAYER_STAGE_BEGIN;
         animator.SetTrigger(Globals.PLAYER_ANI_BEGIN);
         PlaySound(skiClip, 0.4f);
+        partical.SetActive(false);
     }
 
     public void PlaySound(AudioClip clip, float volume = 1.0f){
@@ -102,4 +117,12 @@ public class PlayerController : MonoBehaviour
         animator.SetTrigger(Globals.PLAYER_ANI_OVER);
         PlaySound(FailueClip, 0.7f);
     }
+
+    public void OnGo(bool isGo){
+        partical.SetActive(isGo);
+        // GetComponent<BoxCollider2D>().isTrigger = isGo;
+        // transform.GetComponent<Rigidbody2D>().trigg
+        // transform.GetComponent<Rigidbody>().enabled = false;
+    }
+
 }

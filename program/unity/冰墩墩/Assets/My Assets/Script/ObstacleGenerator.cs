@@ -19,7 +19,7 @@ public class ObstacleGenerator : MonoBehaviour
     private float landcd = 0.0f;
     public const int LAND_CD = 3;
     private float lanterncd = 0.0f;
-    public const int LANTERN_CD = 3;
+    public const int LANTERN_CD = 2;
 
     private void Awake()
     {
@@ -98,7 +98,7 @@ public class ObstacleGenerator : MonoBehaviour
             return;
         }
         lanterncd = 0;
-        GameObject ob = genObject(Globals.LAND_NAME, lanterns);
+        GameObject ob = genObject(Globals.LANTERN_NAME, lanterns);
 
     }
 

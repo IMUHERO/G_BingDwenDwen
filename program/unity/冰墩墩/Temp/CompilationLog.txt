@@ -1,28 +1,2 @@
-# Starting compiling UnityEngine.TestRunner.dll
-/Users/imuhero/Applications/2020.3.27f1c1/Unity.app/Contents/Tools/RoslynScripts/unity_csc.sh /noconfig @Temp/UnityTempFile-fa9df99a9038b419aa1dbb5c3971fba1
-# Starting compiling UnityEngine.UI.dll
-/Users/imuhero/Applications/2020.3.27f1c1/Unity.app/Contents/Tools/RoslynScripts/unity_csc.sh /noconfig @Temp/UnityTempFile-79495d278871a40fcb475e01eda7f438
-# Starting compiling Unity.InternalAPIEngineBridge.001.dll
-/Users/imuhero/Applications/2020.3.27f1c1/Unity.app/Contents/Tools/RoslynScripts/unity_csc.sh /noconfig @Temp/UnityTempFile-4cf7f7bcb3b4a46f0b448f424f7bd03e
-# Starting compiling Unity.2D.PixelPerfect.dll
-/Users/imuhero/Applications/2020.3.27f1c1/Unity.app/Contents/Tools/RoslynScripts/unity_csc.sh /noconfig @Temp/UnityTempFile-e7e3ec0afeb2848cba631744e6b8e91d
-# Starting compiling Unity.Timeline.dll
-/Users/imuhero/Applications/2020.3.27f1c1/Unity.app/Contents/Tools/RoslynScripts/unity_csc.sh /noconfig @Temp/UnityTempFile-72ef8dff5bddd409f93e24e42d054aaf
-# Starting compiling Unity.TextMeshPro.dll
-/Users/imuhero/Applications/2020.3.27f1c1/Unity.app/Contents/Tools/RoslynScripts/unity_csc.sh /noconfig @Temp/UnityTempFile-f4716a38846e24dae940697b39feccb3
-# Starting compiling Unity.Mathematics.dll
-/Users/imuhero/Applications/2020.3.27f1c1/Unity.app/Contents/Tools/RoslynScripts/unity_csc.sh /noconfig @Temp/UnityTempFile-e0a4cbf92e0654503ba2add3217ee699
-# Starting compiling Unity.2D.IK.Runtime.dll
-/Users/imuhero/Applications/2020.3.27f1c1/Unity.app/Contents/Tools/RoslynScripts/unity_csc.sh /noconfig @Temp/UnityTempFile-80b02e8824774468eaa6e0ea8b23076c
-# Starting compiling Unity.2D.Animation.Triangle.Runtime.dll
-/Users/imuhero/Applications/2020.3.27f1c1/Unity.app/Contents/Tools/RoslynScripts/unity_csc.sh /noconfig @Temp/UnityTempFile-59f4c2c79da1c4f01bbe8773673fd6d1
-# Starting compiling Unity.2D.Common.Runtime.dll
-/Users/imuhero/Applications/2020.3.27f1c1/Unity.app/Contents/Tools/RoslynScripts/unity_csc.sh /noconfig @Temp/UnityTempFile-f07f90cc7791a477aaba4f7df1171a65
-# Starting compiling Cinemachine.dll
-/Users/imuhero/Applications/2020.3.27f1c1/Unity.app/Contents/Tools/RoslynScripts/unity_csc.sh /noconfig @Temp/UnityTempFile-2921991c832a343dd9d3b89096419b89
-# Starting compiling Unity.2D.Animation.Runtime.dll
-/Users/imuhero/Applications/2020.3.27f1c1/Unity.app/Contents/Tools/RoslynScripts/unity_csc.sh /noconfig @Temp/UnityTempFile-575bb0dbda0754d68abffd7fd852cd05
-# Starting compiling Unity.2D.SpriteShape.Runtime.dll
-/Users/imuhero/Applications/2020.3.27f1c1/Unity.app/Contents/Tools/RoslynScripts/unity_csc.sh /noconfig @Temp/UnityTempFile-f268b04d734fe4f468c8fe1073ab7607
 # Starting compiling Assembly-CSharp.dll
-/Users/imuhero/Applications/2020.3.27f1c1/Unity.app/Contents/Tools/RoslynScripts/unity_csc.sh /noconfig @Temp/UnityTempFile-539a1dcafc93045b79032d22f3656823
+/Users/imuhero/Applications/2020.3.27f1c1/Unity.app/Contents/Tools/RoslynScripts/unity_csc.sh /noconfig @Temp/UnityTempFile-bd9966b181ece408bb488608707aa375

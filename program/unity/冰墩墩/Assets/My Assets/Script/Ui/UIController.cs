@@ -13,6 +13,8 @@ public class UIController : MonoBehaviour
     public Text resultText;
     public GameObject XueRongRong;
     public GameObject resultUI;
+
+    public GameObject startUI;
     // private float onSecondCd = 0;
     private string scoreSuffix = "Distance";
     private void Awake()
@@ -37,12 +39,14 @@ public class UIController : MonoBehaviour
     public void showTipText(string tip)
     {
         print("show tips ....." + tip);
-        if(tip == Globals.TIP_SPEED){
+        if (tip == Globals.TIP_SPEED)
+        {
             tipSpeedUI.gameObject.SetActive(true);
             tipSpeedUI.text = tip;
             Invoke("waitDestorySpeedTip", Globals.TIP_SHOW_TIME);
         }
-        if(tip == Globals.TIP_GENERATE){
+        if (tip == Globals.TIP_GENERATE)
+        {
             tipGenUI.gameObject.SetActive(true);
             tipGenUI.text = tip;
             Invoke("waitDestoryGenTip", Globals.TIP_SHOW_TIME);
@@ -57,14 +61,19 @@ public class UIController : MonoBehaviour
         tipGenUI.gameObject.SetActive(false);
     }
 
-    public void showXueRongRong(){
-        XueRongRong.SetActive(true);
+    public void showXueRongRong(bool isShow = true)
+    {
+        XueRongRong.SetActive(isShow);
         Invoke("waitDestoryXRR", Globals.XRR_SHOW_TIME);
     }
 
     void waitDestoryXRR()
     {
-        XueRongRong.SetActive(false);
+        if (!Globals.canGo)
+        {
+            XueRongRong.SetActive(false);
+
+        }
     }
 
     private void setScoreText(float M)
@@ -75,6 +84,9 @@ public class UIController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(!Globals.gameStart){
+            return;
+        }
         setScoreText(Globals.totalDistance);
         // onSecondCd += Time.deltaTime;
         // if(onSecondCd > 0.5){
@@ -87,6 +99,22 @@ public class UIController : MonoBehaviour
             resultText.text = scoreUI.text;
         }
 
+    }
+
+    public void onCanGo(bool canGo)
+    {
+        UIController.instance.XueRongRong.SetActive(canGo);
+        string triggerString = canGo ? "Go" : "NotGo";
+        XueRongRong.GetComponent<Animator>().SetTrigger(triggerString);
+    }
+
+    public void OnGo(bool isGo)
+    {
+        showXueRongRong(isGo);
+        if (isGo)
+        {
+            UIHealthBar.instance.SetValue(0);
+        }
     }
 
     // private void doOneSecond(){
@@ -110,5 +138,11 @@ public class UIController : MonoBehaviour
     public void onRight()
     {
 
+    }
+
+    public void onBtnStart()
+    {
+        onRestart();
+        startUI.SetActive(false);
     }
 }

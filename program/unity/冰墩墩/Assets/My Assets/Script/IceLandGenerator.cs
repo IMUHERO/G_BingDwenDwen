@@ -85,36 +85,30 @@ public class IceLandGenerator : MonoBehaviour
         if(PlayerController.playerStage != Globals.PLAYER_STAGE_MOVING){
             return;
         }
+        if(Globals.isPlayerGo){
+            return;
+        }
         int addSpeedTimes = (int)(Globals.totalDistance / Globals.DIS_ADD_SPEED);
         int addGenTimes = (int)(Globals.totalDistance / Globals.DIS_ADD_GEN);
         // print(">>>>>>>>>>>>>>>>" + addSpeedTimes + ' ' + addGenTimes);
-        if (addGenTimes > 0 && !addGenerateRates.Contains(addGenTimes))
-        {
-            addGenerateRates.Add(addGenTimes);
-            Globals.distanceGenerateRate *= Globals.DIS_ADD_GEN_RATE;
-            UIController.instance.showTipText(Globals.TIP_GENERATE);
-        }
-        else if (addSpeedTimes > 0 && !addSpeedRates.Contains(addSpeedTimes))
+        if (addSpeedTimes > 0 && !addSpeedRates.Contains(addSpeedTimes))
         {
             addSpeedRates.Add(addSpeedTimes);
             Globals.distanceSpeedRate += Globals.DIS_ADD_SPEED_RATE;
             UIController.instance.showTipText(Globals.TIP_SPEED);
+        }
+        else if (addGenTimes > 0 && !addGenerateRates.Contains(addGenTimes))
+        {
+            addGenerateRates.Add(addGenTimes);
+            Globals.distanceGenerateRate *= Globals.DIS_ADD_GEN_RATE;
+            UIController.instance.showTipText(Globals.TIP_GENERATE);
         }
     }
 
     // Update is called once per frame
     void Update()
     {
-        // if (PlayerController.playerStage == Globals.PLAYER_STAGE_BEGIN)
-        // {
-
-        //     for (int i = 0; i < lands.Count; i++)
-        //     {
-        //         Vector2 pos = lands[i].transform.position;
-        //         pos.y -= i * Globals.LAND_HIGH;
-        //         lands[i].transform.position = pos;
-        //     }
-        // }
+  
     }
     void FixedUpdate()
     {

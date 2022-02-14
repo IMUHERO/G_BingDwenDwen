@@ -4,13 +4,17 @@ using UnityEngine;
 
 public class SnowBornController : MonoBehaviour
 {
+
+    public static SnowBornController instance { get; private set; }
     // Start is called before the first frame update
     public static float iceBornMoveDis = 0.0f;
+
     // private bool isBeginMove = false;
     private Animator animator;
     // private float curBeginDis = 0;
     private void Awake() {
         animator = GetComponent<Animator>();
+        instance = this;
     }
     void Start()
     {
@@ -65,7 +69,6 @@ public class SnowBornController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        print("innnnnnnnnnnnnnn" + other);
         if (other.tag == "Player")
         {
             // PlayerController controller = other.GetComponent<PlayerController>();
