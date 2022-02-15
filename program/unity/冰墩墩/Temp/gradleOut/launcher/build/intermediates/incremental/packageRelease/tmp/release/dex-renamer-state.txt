@@ -1,4 +1,0 @@
-#Tue Feb 15 00:38:23 CST 2022
-base.0=/Users/imuhero/program/unity/冰墩墩/Temp/gradleOut/launcher/build/intermediates/dex/release/mergeDexRelease/classes.dex
-path.0=classes.dex
-renamed.0=classes.dex

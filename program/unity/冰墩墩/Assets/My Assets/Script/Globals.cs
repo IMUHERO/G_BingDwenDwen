@@ -44,7 +44,7 @@ public class Globals: MonoBehaviour
     public const float BASE_ROTATE_RATE = 5;
     public const float BASE_SPEED_RATE = 1;
     public const float LAND_MOVE_SPEED = 4.0f;
-    public const float MaxCollectNum = 10f;   // 积攒5个释放大招
+    public const float MaxCollectNum = 8f;   // 积攒5个释放大招
 
     public const int LAND_HIGH = 15;
 
